@@ -1,7 +1,8 @@
 ---
 title: git
 date: 2017-11-21 12:35:17
-tags:
+tags: 1 2 3
+categories: 技术
 ---
 
  新的工程提交到新的git工程中去

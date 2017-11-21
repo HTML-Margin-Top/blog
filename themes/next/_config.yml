@@ -47,10 +47,10 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories/
+  categories: /categories
   #about: /about/
   archives: /archives/
-  tags: /tags/
+  tags: /tags
   #sitemap: /sitemap.xml
   #commonweal: /404/
 
@@ -90,7 +90,9 @@ scheme: Mist
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
+social:
+  GitHub: https://github.com/HTML-Margin-Top/blog
+  Weibo: https://weibo.com/5218840111/profile?rightmod=1&wvr=6&mod=personinfo
   #LinkLabel: Link
 
 # Social Links Icons
@@ -104,6 +106,7 @@ social_icons:
   transition: false
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
+  github: github
   GitHub: github
   E-Mail: envelope
   Google: google
@@ -270,7 +273,7 @@ font:
   global:
     # external: true will load this font family from host.
     external: true
-    family: Lato
+    family: 'Microsoft Jhenghei'
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
@@ -282,7 +285,7 @@ font:
   # Fallback to `global` font settings.
   posts:
     external: true
-    family:
+    family: Microsoft Jhenghei
 
   # Font settings for Logo
   # Fallback to `global` font settings.
