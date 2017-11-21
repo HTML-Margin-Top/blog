@@ -4,8 +4,9 @@ date: 2017-11-21 12:35:17
 tags:
 ---
 
-新的工程提交到新的git工程中去
+### 新的工程提交到新的git工程中去
 七步大法教你将新项目上传到GitHub
+根据下面网站进行操作
 http://www.imooc.com/article/18024?block_id=tuijian_wz
 这里要注意，可能会出现
 ``` bash
