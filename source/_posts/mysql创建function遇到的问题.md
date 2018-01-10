@@ -10,6 +10,14 @@ tags:
 
 解决掉版本问题之后，又发现了新的问题。
 导入数据的时候遇见报错：This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)
+问题分析：
+这是我们开启了bin-log, 我们就必须指定我们的函数是否是
+1. DETERMINISTIC 不确定的
+2. NO SQL 没有SQl语句，当然也不会修改数据
+3. READS SQL DATA 只是读取数据，当然也不会修改数据
+4. MODIFIES SQL DATA 要修改数据
+5. CONTAINS SQL 包含了SQL语句
+其中在function里面，只有 DETERMINISTIC, NO SQL 和 READS SQL DATA 被支持。如果我们开启了 bin-log, 我们就必须为我们的function指定一个参数。
 解决方法如下：
 1. mysql> set global log_bin_trust_function_creators = 1;
 2. 系统启动时 --log-bin-trust-function-creators=1
