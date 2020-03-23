@@ -1,0 +1,631 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>万灵</title>
+    <style>
+
+        .noData {
+            text-align: center;
+            margin-top: 20px;
+        }
+        @media screen and (min-width:960px) {
+            body {
+                background-color: #f0f0f0 !important;
+                margin: 0;
+            }
+
+
+
+            .pageData {
+                display: flex;
+                width: 50%;
+                margin: 0 auto;
+                height:auto!important;
+                min-height:100%;
+                background-color: #ffffff;
+            }
+
+            .patients {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                font-size: 18px;
+                color: #333333;
+            }
+
+            .patient {
+                display: flex;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-left: 40px;
+                margin-right: 40px;
+                border-bottom: 1px #ebebeb solid;
+                justify-content:center;
+            }
+
+
+
+            body {
+                background-color: #f0f0f0;
+                margin: 0;
+            }
+
+            .inputPhone {
+                display: inline-flex;
+                width: 50%;
+                border: solid 1px cornflowerblue;
+                border-radius: 10px;
+                padding: 5px
+            }
+
+            .phone {
+                width: 90%;
+                border: 0;
+                font-size: 18px;
+                outline: none;
+                margin-left: 10px;
+            }
+
+            .downloadDiv {
+                display: inline-flex;
+                margin-left: 20px
+            }
+
+
+            .download {
+                padding: 6px 29px;
+                border: solid 1px #6392fe;
+                color:  #6392fe;
+                font-size: 20px;
+                border-radius: 20px;
+                float:right;
+                cursor:pointer;
+                text-decoration:none;
+            }
+
+
+
+            .user span {
+                font-size: 18px;
+                color: #333333;
+            }
+            .user a {
+                font-size: 18px;
+                color: #6392fe;
+                cursor:pointer;
+                text-decoration:none;
+            }
+
+            #header a {
+                font-size: 20px;
+                color: #6392fe;
+                cursor:pointer;
+                text-decoration:none;
+            }
+
+
+            /*取消选中文字*/
+            .download {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Chrome/Safari/Opera */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently*/
+            }
+
+
+
+            .listTable {
+                margin-left: 40px;
+                margin-right: 40px;
+                font-size: 20px;
+                border-collapse: collapse;
+            }
+
+            tr {
+                border-bottom: 1px #ebebeb solid;
+            }
+
+            td {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+        }
+
+        @media screen and (min-width:321px) and (max-width:960px)  {
+            .pageData {
+                display: flex;
+                width: 100%;
+                height:auto!important;
+                min-height:100%;
+                margin: 0 auto;
+                background-color: #ffffff;
+            }
+
+            .patients {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                font-size: 14px;
+                color: #333333;
+            }
+
+            .patient {
+                display: flex;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-left: 30px;
+                margin-right: 30px;
+                border-bottom: 1px #ebebeb solid;
+                justify-content:center;
+            }
+
+            .inputPhone {
+                display: inline-flex;
+                width: 50%;
+                border: solid 1px cornflowerblue;
+                border-radius: 10px;
+                padding: 5px
+            }
+
+            .phone {
+                width: 90%;
+                border: 0;
+                font-size: 14px;
+                outline: none;
+                margin-left: 10px;
+            }
+
+            .download {
+                padding: 6px 29px;
+                border: solid 1px #6392fe;
+                color:  #6392fe;
+                font-size: 14px;
+                border-radius: 20px;
+                float:right;
+                cursor:pointer;
+                text-decoration:none;
+            }
+
+            .downloadDiv {
+                display: inline-flex;
+                margin-left: 20px
+            }
+
+
+            /*取消选中文字*/
+            .download {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Chrome/Safari/Opera */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently*/
+            }
+
+            .listTable {
+                margin-left: 30px;
+                margin-right: 30px;
+                font-size: 14px;
+                border-collapse: collapse;
+            }
+
+            tr {
+                border-bottom: 1px #ebebeb solid;
+            }
+
+            td {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+        }
+
+        @media screen and (max-width:320px)  {
+            .pageData {
+                display: flex;
+                width: 100%;
+                height:auto!important;
+                min-height:100%;
+                margin: 0 auto;
+                background-color: #ffffff;
+            }
+
+            .patients {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                font-size: 12px;
+                color: #333333;
+            }
+
+            .patient {
+                display: flex;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border-bottom: 1px #ebebeb solid;
+                justify-content:center;
+            }
+
+            .inputPhone {
+                display: inline-flex;
+                width: 50%;
+                border: solid 1px cornflowerblue;
+                border-radius: 10px;
+                padding: 5px
+            }
+
+            .phone {
+                width: 90%;
+                border: 0;
+                font-size: 12px;
+                outline: none;
+                margin-left: 10px;
+            }
+
+            .download {
+                padding: 6px 29px;
+                border: solid 1px #6392fe;
+                color:  #6392fe;
+                font-size: 12px;
+                border-radius: 20px;
+                float:right;
+                cursor:pointer;
+                text-decoration:none;
+            }
+
+            .downloadDiv {
+                display: inline-flex;
+                margin-left: 20px
+            }
+
+
+            /*取消选中文字*/
+            .download {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Chrome/Safari/Opera */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently*/
+            }
+
+            .listTable {
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 12px;
+                border-collapse: collapse;
+            }
+
+            tr {
+                border-bottom: 1px #ebebeb solid;
+            }
+
+            td {
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="pageData">
+    <div class="patients" id="haveAddList">
+        <div class="patient">
+            <div  class="inputPhone" >
+                <input  class="phone"  placeholder="三位以上手机号" id="input"/>
+            </div>
+            <div class="downloadDiv">
+                <a style="text-align: right" class="download" onclick="getList()">查询</a></div>
+        </div>
+<!--        <div class="list">
+            <div class="people">
+                <div class="item">手机号</div>
+                <div class="item">手机号后六位</div>
+                <div class="item">隔离地点</div>
+            </div>
+            <div class="people">
+                <div class="item">183****9849</div>
+                <div class="item">999849</div>
+                <div class="item">集团观察宿舍</div>
+            </div>
+            <div class="people">
+                <div class="item">183****9849</div>
+                <div class="item">999849</div>
+                <div class="item">集团观察宿舍</div>
+            </div>
+            <div class="people">
+                <div class="item">183****9849</div>
+                <div class="item">999849</div>
+                <div class="item">集团观察宿舍</div>
+            </div>
+            <div class="people">
+                <div class="item">183****9849</div>
+                <div class="item">999849</div>
+                <div class="item">集团观察宿舍</div>
+            </div>
+        </div>-->
+
+        <table class="listTable" id="table">
+            <thead >
+            <tr>
+                <td align="center" valign="middle">手机号</td>
+                <td align="center" valign="middle">手机号后六位</td>
+                <td align="center" valign="middle">地点</td>
+            </tr>
+            </thead>
+    <!--        <tr>
+                <td align="center" valign="middle">183****9849</td>
+                <td align="center" valign="middle">999849</td>
+                <td align="center" valign="middle">集团观察宿舍</td>
+            </tr>
+
+            <tr>
+                <td align="center" valign="middle">183****9849</td>
+                <td align="center" valign="middle">999849</td>
+                <td align="center" valign="middle">集团观察宿舍</td>
+            </tr>
+
+            <tr>
+                <td align="center" valign="middle">183****9849</td>
+                <td align="center" valign="middle">999849</td>
+                <td align="center" valign="middle">集团观察宿舍</td>
+            </tr>
+
+            <tr>
+                <td align="center" valign="middle">183****9849</td>
+                <td align="center" valign="middle">999849</td>
+                <td align="center" valign="middle">集团观察宿舍</td>
+            </tr>
+
+            <tr>
+                <td align="center" valign="middle">183****9849</td>
+                <td align="center" valign="middle">999849</td>
+                <td align="center" valign="middle">集团观察宿舍</td>
+            </tr>
+
+            <tr>
+                <td align="center" valign="middle">183****9849</td>
+                <td align="center" valign="middle">999849</td>
+                <td align="center" valign="middle">集团观察宿舍</td>
+            </tr>-->
+        </table>
+    </div>
+
+
+        </div>
+</div>
+</body>
+
+<script>
+    /* 封装ajax函数
+     * @param {string}opt.type http连接的方式，包括POST和GET两种方式
+     * @param {string}opt.url 发送请求的url
+     * @param {boolean}opt.async 是否为异步请求，true为异步的，false为同步的
+     * @param {object}opt.data 发送的参数，格式为对象类型
+     * @param {function}opt.success ajax发送并接收成功调用的回调函数
+     */
+    function ajax(opt) {
+        opt = opt || {};
+        opt.method = opt.method.toUpperCase() || 'POST';
+        opt.url = opt.url || '';
+        opt.async = opt.async || true;
+        opt.data = opt.data || null;
+        opt.success = opt.success || function () {
+        };
+        var xmlHttp = null;
+        if (XMLHttpRequest) {
+            xmlHttp = new XMLHttpRequest();
+        } else {
+            xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        var params = [];
+        for (var key in opt.data) {
+            params.push(key + '=' + opt.data[key]);
+        }
+        var postData = params.join('&');
+        if (opt.method.toUpperCase() === 'POST') {
+            xmlHttp.open(opt.method, opt.url, opt.async);
+            xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+            xmlHttp.send(postData);
+        } else if (opt.method.toUpperCase() === 'GET') {
+            xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+            xmlHttp.send(null);
+        }
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                opt.success(JSON.parse(xmlHttp.responseText));//如果不是json数据可以去掉json转换
+            }
+        };
+    }
+/*
+    ajax({
+        method: 'GET',
+        url: 'localhost:8080/Gauge/meidi/text',
+        success: function (OriginalFromActivity) {
+            //在这里对获取的数据经常操作
+        }
+    });*/
+
+    var  _jpid = 0
+
+    function Request() {
+        var util = {}
+        util.get = util.GET = function(url, params, cb) {
+            this._formatRequest(url, 'GET', params, cb)
+        }
+        util.post = util.POST = function(url, data, cb) {
+            this._formatRequest(url, 'POST', data, cb)
+        }
+        util._formatRequest = function(url, type, data, cb) {
+            util.ajax({
+                url: url,
+                type: type,
+                data: data,
+                success: function(res) {
+                    cb(res)
+                },
+                error: function(err) {
+                    cb('', err)
+                }
+            })
+        }
+        util.ajax = function(opt) {
+            var xhr = XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject
+            var type = opt.type.toUpperCase(),
+                data = opt.data,
+                url = opt.url,
+                dataArr = []
+            for (var k in data) {
+                if (typeof data[k] !== 'undefined') {
+                    dataArr.push(k + '=' + data[k])
+                }
+            }
+            if (type === 'GET') {
+                url = dataArr.length ? (url + (url.indexOf('?') > -1 ? '&' : '?') + dataArr.join('&')).replace(/\?$/g, '') : url
+                xhr.open(type, url, true)
+                for (var k in opt.headers) {
+                    xhr.setRequestHeader(k, opt.headers)
+                }
+                xhr.send()
+            } else if (type === 'POST') {
+                xhr.open(type, url, true)
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                for (var k in opt.headers) {
+                    xhr.setRequestHeader(k, opt.headers)
+                }
+                xhr.send(dataArr.join('&'))
+            } else if (type === "JSONP") {
+                util.jsonp(opt)
+            }
+            xhr.onload = function() {
+                var res = JSON.parse(xhr.responseText)
+                if (xhr.status === 200 || xhr.status === 304) {
+                    if (opt.success && opt.success instanceof Function) {
+                        var res = JSON.parse(xhr.responseText)
+                        if (xhr.status === 200 || xhr.status === 304) {
+                            opt.success.call(xhr, res)
+                        } else {
+                            opt.error.call(xhr, res)
+                        }
+                    }
+                } else {
+                    if (opt.error && opt.error instanceof Function) {
+                        opt.error.call(xhr, res)
+                    }
+                }
+            }
+        }
+
+        util.inQueryUrl = function(url, data) {
+            if (!data) {
+                return url
+            }
+            var str = url + '?'
+            for (var k in data) {
+                var item = k + '=' + data[k] + '&'
+                str += item
+            }
+            str = str.slice(0, str.length - 1)
+            return str
+        }
+        util.jsonp = function(opt) {
+            var callbackName = opt.jsonp || ((opt.data && opt.data.callback) ? opt.data.callback : '_jp' + _jpid++)
+            opt.data.callback = callbackName
+            var head = document.getElementsByTagName('head')[0]
+            var data = formatParams(opt.data)
+            var script = document.createElement('script')
+            head.appendChild(script)
+            window[callbackName] = function(json) {
+                head.removeChild(script);
+                clearTimeout(script.timer);
+                window[callbackName] = null;
+                if (opt.success && opt.success instanceof Function) {
+                    opt.success.call(window, json)
+                }
+            }
+            script.src = opt.url + '?' + data
+            if (opt.time) {
+                script.timer = setTimeout(function() {
+                    window[callbackName] = null;
+                    head.removeChild(script);
+                    opt.error && opt.error({
+                        message: '超时'
+                    });
+                }, time)
+            }
+        }
+        return util
+    }
+
+    function formatParams(data) {
+        var arr = [];
+        for (var name in data) {
+            arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+        };
+        // 添加一个随机数，防止缓存
+        arr.push('v=' + random());
+        return arr.join('&');
+    }
+    // 获取随机数
+    function random() {
+        return Math.floor(Math.random() * 10000 + 500);
+    }
+
+    var $=new Request()
+
+
+    function  getList() {
+        var input = document.getElementById("input");
+        var value = input.value;
+        if (value.length < 3) {
+            return;
+        }
+        $.get('https://www.wanlingyun.top/Scale/meidi/text', {
+            name:value
+        }, function(res, err) {
+            if (res) {
+                console.log(res)
+                var html = "<thead >\n" +
+                    "            <tr>\n" +
+                    "                <td align=\"center\" valign=\"middle\">手机号</td>\n" +
+                    "                <td align=\"center\" valign=\"middle\">手机号后六位</td>\n" +
+                    "                <td align=\"center\" valign=\"middle\">地点</td>\n" +
+                    "            </tr>\n" +
+                    "            </thead>";
+                var table = document.getElementById("table");
+                if (res.staff.length === 0 ) {
+                    html +="       <tr>\n" +
+                        "                <td  colspan='3' align=\"center\" valign=\"middle\">暂无数据</td>\n" +
+                        "            </tr>"
+                    table.innerHTML = html;
+                }
+                for (var key in res.staff) {
+                    var item = res.staff[key];
+                    html += "       <tr>\n" +
+                        "                <td align=\"center\" valign=\"middle\">"+ (item.phone || "暂无数据")+"</td>\n" +
+                        "                <td align=\"center\" valign=\"middle\">"+item.excerpt+"</td>\n" +
+                        "                <td align=\"center\" valign=\"middle\">"+item.address+"</td>\n" +
+                        "            </tr>"
+                }
+
+                table.innerHTML = html;
+
+            } else {
+                console.log(err);
+            }
+        })
+    }
+
+</script>
+
+</html>
