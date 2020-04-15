@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Microsoft Jhenghei:300,300italic,400,400italic,700,700italic|Microsoft Jhenghei:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="前端1.  标签的使用独占一行布局：尽量使用css盒模型外边距（margin）、边框（border）、内边距（padding）、内容（content）四个属性或者flex页面布局、或者在特殊情境下可使用table、li 标签调整布局，不要使用p、h1…这种本身具有独占一行属性的标签进行嵌套。1234567891011121314151617181920212223242526&amp;lt;p&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码走查">
+<meta property="og:url" content="http://yoursite.com/2017/12/08/代码走查/index.html">
+<meta property="og:site_name" content="负三">
+<meta property="og:description" content="前端1.  标签的使用独占一行布局：尽量使用css盒模型外边距（margin）、边框（border）、内边距（padding）、内容（content）四个属性或者flex页面布局、或者在特殊情境下可使用table、li 标签调整布局，不要使用p、h1…这种本身具有独占一行属性的标签进行嵌套。1234567891011121314151617181920212223242526&amp;lt;p&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/true==.jpg">
+<meta property="og:image" content="http://yoursite.com/img/true===.jpg">
+<meta property="og:updated_time" content="2020-04-15T06:17:45.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代码走查">
+<meta name="twitter:description" content="前端1.  标签的使用独占一行布局：尽量使用css盒模型外边距（margin）、边框（border）、内边距（padding）、内容（content）四个属性或者flex页面布局、或者在特殊情境下可使用table、li 标签调整布局，不要使用p、h1…这种本身具有独占一行属性的标签进行嵌套。1234567891011121314151617181920212223242526&amp;lt;p&amp;gt;">
+<meta name="twitter:image" content="http://yoursite.com/img/true==.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/08/代码走查/">
+
+
+
+
+
+  <title>代码走查 | 负三</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">负三</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/08/代码走查/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="负三">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="负三">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">代码走查</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-08T10:05:01+00:00">
+                2017-12-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><h3 id="1-标签的使用"><a href="#1-标签的使用" class="headerlink" title="1.  标签的使用"></a>1.  标签的使用</h3><p>独占一行布局：尽量使用css盒模型外边距（margin）、边框（border）、内边距（padding）、内容（content）四个属性或者flex页面布局、或者在特殊情境下可使用table、li 标签调整布局，不要使用p、h1…这种本身具有独占一行属性的标签进行嵌套。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;div class=<span class="string">"col-md-2"</span> style=<span class="string">"text-align: right"</span>&gt;用户名称&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"col-md-7"</span>&gt;</span><br><span class="line">        &lt;input id=<span class="string">"addusername"</span> <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"col-md-12 form-control"</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;div class=<span class="string">"col-md-12"</span> style=<span class="string">"height:5px;"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;div class=<span class="string">"col-md-2"</span> style=<span class="string">"text-align: right"</span>&gt;用户密码&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"col-md-7"</span>&gt;</span><br><span class="line">      &lt;input id=<span class="string">"addfirstpassword"</span></span><br><span class="line">      <span class="built_in">type</span>=<span class="string">"password"</span></span><br><span class="line">      onchange=<span class="string">"checkPasswordReg('addfirstpassword','errorinfo');"</span></span><br><span class="line">      class=<span class="string">"col-md-12 form-control"</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;div class=<span class="string">"col-md-12"</span> style=<span class="string">"height:5px;"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    &lt;div class=<span class="string">"col-md-2"</span> style=<span class="string">"text-align: right"</span>&gt;确认密码&lt;/div&gt;</span><br><span class="line">    &lt;div class=<span class="string">"col-md-7"</span>&gt;</span><br><span class="line">        &lt;input id=<span class="string">"addsecondpassword"</span></span><br><span class="line">        <span class="built_in">type</span>=<span class="string">"password"</span></span><br><span class="line">        onchange=<span class="string">"verifyRepassword('addfirstpassword', 'addsecondpassword','errorinfo');"</span></span><br><span class="line">        class=<span class="string">"col-md-12 form-control"</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-多个js文件引用"><a href="#2-多个js文件引用" class="headerlink" title="2.  多个js文件引用"></a>2.  多个js文件引用</h3><p>每个js文件有相同函数名，开发者通过js文件的引入顺序来决定调用哪个文件中的方法，前台维护起来云里雾里</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"<span class="variable">$&#123;pageContext.request.contextPath &#125;</span>/js/jquery.nicescroll.min.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"<span class="variable">$&#123;pageContext.request.contextPath &#125;</span>/js/patientlist.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;%--&lt;script src=<span class="string">"<span class="variable">$&#123;pageContext.request.contextPath &#125;</span>/js/psqi.js"</span>&gt;&lt;/script&gt;--%&gt;</span><br><span class="line">&lt;script src=<span class="string">"<span class="variable">$&#123;pageContext.request.contextPath &#125;</span>/js/searchPatientInfo.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"<span class="variable">$&#123;pageContext.request.contextPath &#125;</span>/js/radioCommon.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"<span class="variable">$&#123;pageContext.request.contextPath &#125;</span>/js/scale.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"<span class="variable">$&#123;pageContext.request.contextPath &#125;</span>/js/searchPatientInfo.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-css-命名"><a href="#3-css-命名" class="headerlink" title="3.  css 命名"></a>3.  css 命名</h3><p>推荐命名与css选择器结合使用，同时重构之后不需要的代码请删除。现在命名太多，从IDEA代码检查中看出有大量没有使用的class</p>
+<h3 id="4-js中的信息提示，推荐使用const-定义"><a href="#4-js中的信息提示，推荐使用const-定义" class="headerlink" title="4.  js中的信息提示，推荐使用const 定义"></a>4.  js中的信息提示，推荐使用const 定义</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var ERR_NODATA = <span class="string">"提交答题数据失败，请检查是否填写答题数据"</span>;</span><br><span class="line">var ERR_NORECORD = <span class="string">"提交答题数据失败，请检查记录是否存在"</span>;</span><br><span class="line">var PATIENT_SURE = <span class="string">"请先在左侧患者信息栏找到该患者信息"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="5-使用“-”替换“-”"><a href="#5-使用“-”替换“-”" class="headerlink" title="5.  使用“===”替换“==”"></a>5.  使用“===”替换“==”</h3><p>“===”叫严格运算符，“==”叫相等运算符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">success: <span class="keyword">function</span> (data) &#123;</span><br><span class="line">    <span class="keyword">if</span> (data.status == <span class="string">"1"</span>) &#123;</span><br><span class="line">        alertContent(<span class="string">"保存草稿成功！"</span>);</span><br><span class="line">        $(<span class="string">"#status"</span>).prop(<span class="string">"value"</span>, <span class="string">"草稿"</span>).css(<span class="string">"color"</span>,<span class="string">"#d63d3d"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        alertContent(data.info);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这是 ==<br> <img src="\img\true==.jpg" width="600" height="600" alt="图片名称" align="center"><br>这是 ===<br> <img src="\img\true===.jpg" width="600" height="600" alt="图片名称" align="center"></p>
+<h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><h3 id="1-方法名、参数名、成员变量、局部变量命名"><a href="#1-方法名、参数名、成员变量、局部变量命名" class="headerlink" title="1. 方法名、参数名、成员变量、局部变量命名"></a>1. 方法名、参数名、成员变量、局部变量命名</h3><p>方法名、参数名、成员变量、局部变量命名都统一使用lowerCamelCase，必须遵从驼峰形式。<br>在量表工程中一共有275处有此问题。大部分是代码规范问题，小部分是因为业务逻辑不得已的命名。</p>
+<p>成员变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ScaleMenuList.java</span><br><span class="line"></span><br><span class="line">public class ScaleMenuList &#123;</span><br><span class="line">    String MenuID;</span><br><span class="line">    String MenuCode;</span><br><span class="line">    int ParentID;</span><br><span class="line">    String MenuName;</span><br><span class="line">    String MenuIcon;</span><br><span class="line">    String MenuUrl;</span><br><span class="line">    String DisplayNo;</span><br><span class="line">    String Remark;</span><br><span class="line">    String status;</span><br><span class="line">    String color;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">PeaBodyMapper.java</span><br><span class="line"></span><br><span class="line">public interface PeaBodyMapper &#123;</span><br><span class="line">    int NewRecord(PeaBodyRecord peaBodyRecord); //新建记录</span><br><span class="line"></span><br><span class="line">    int SaveDraft(List&lt;PeaBodyAnswer&gt; Answer);  //保存草稿</span><br><span class="line"></span><br><span class="line">    int SaveTestResult(List&lt;PeaBodyTestResult&gt; peaBodyTestResults); //保存分测试结论</span><br><span class="line"></span><br><span class="line">    int SaveSportResult(List&lt;PeaBodySportresult&gt; peaBodySportresults);  //保存运动结论</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>局部变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ScaleRecordService.java</span><br><span class="line"></span><br><span class="line"> private String[][] getTop(List&lt;HashMap&gt; scaleRecord) &#123;</span><br><span class="line">        int UsefulNum = 0;</span><br><span class="line">        <span class="keyword">if</span>(scaleRecord.size() &lt;=5) &#123;</span><br><span class="line">            UsefulNum = scaleRecord.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            UsefulNum = 5;</span><br><span class="line">            <span class="keyword">while</span> (UsefulNum &lt; scaleRecord.size()) &#123;</span><br><span class="line">                <span class="keyword">if</span>(scaleRecord.get(UsefulNum-1).get(<span class="string">"UseNum"</span>).toString().equals(scaleRecord.get(UsefulNum).get(<span class="string">"UseNum"</span>).toString())) &#123;</span><br><span class="line">                    UsefulNum++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ...</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-常量命名"><a href="#2-常量命名" class="headerlink" title="2. 常量命名"></a>2. 常量命名</h3><p>常量命名应该全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">QuestionType.java</span><br><span class="line"></span><br><span class="line">public class QuestionType &#123;</span><br><span class="line">    public static final String Radio = <span class="string">"Radio"</span>;  // 单选</span><br><span class="line">    public static final String Multiselect = <span class="string">"Multiselect"</span>; // 多选</span><br><span class="line">    public static final String Completion = <span class="string">"Completion"</span>; // 填空</span><br><span class="line">    public static final String Multicompletion = <span class="string">"Multicompletion"</span>; // 多项填空</span><br><span class="line">    public static final String Sort = <span class="string">"Sort"</span>; // 排序</span><br><span class="line">    public static final String Score = <span class="string">"Score"</span>; // 打分</span><br><span class="line">    public static final String NextPage = <span class="string">"NextPage"</span>;//下一页</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-包名"><a href="#3-包名" class="headerlink" title="3.  包名"></a>3.  包名</h3><p>包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package com.gauge.po.PeaBody;</span><br></pre></td></tr></table></figure>
+<h3 id="4-类名"><a href="#4-类名" class="headerlink" title="4.  类名"></a>4.  类名</h3><p>类名使用UpperCamelCase风格，必须遵从驼峰形式，但以下情形例外：（领域模型的相关命名）DO / BO / DTO / VO / DAO</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class TPaperAnswerDetail</span><br><span class="line">public class httpClient</span><br><span class="line">public class TQuestion</span><br><span class="line">public class TPaperResult</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="5-equals方法的调用"><a href="#5-equals方法的调用" class="headerlink" title="5.  equals方法的调用"></a>5.  equals方法的调用</h3><p>Object的equals方法容易抛空指针异常，应使用常量或确定有值的对象来调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Mini5JudgeA.java</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>  (<span class="string">"A2-a"</span>.equals(mini5Answer.getQuestionID()))  &#123;</span><br><span class="line">    <span class="keyword">if</span>(A1a==0&amp;&amp;mini5Answer.getResult().equals(<span class="string">"0"</span>))&#123;</span><br><span class="line">        mini5PatientConclusions.add(new Mini5PatientConclusion(String.valueOf(snow.next()), <span class="string">"A2"</span>, <span class="string">"未见异常"</span>, patientRecordID));</span><br><span class="line">        <span class="built_in">return</span> mini5PatientConclusions;</span><br><span class="line">    &#125;</span><br><span class="line">    A1a = Integer.parseInt(mini5Answer.getResult());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-不要在条件判断中执行复杂的语句"><a href="#6-不要在条件判断中执行复杂的语句" class="headerlink" title="6.  不要在条件判断中执行复杂的语句"></a>6.  不要在条件判断中执行复杂的语句</h3><p>很多if语句内的逻辑相当复杂，阅读者需要分析条件表达式的最终结果，才能明确什么样的条件执行什么样的语句，那么，如果阅读者分析逻辑表达式错误呢？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MChatCalculate.java</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (score &gt;= SCORE  || (threePointList.equals(CONDITION1)  &amp;&amp; zreoPointList.size() &gt;= 19)) &#123;</span><br><span class="line">    result += 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Mini5JudgeD.java</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ((D1bresult == 0 &amp;&amp; D3Ns &gt; 3) || (D1bresult == 1 &amp;&amp; D3Ns &gt; 2)) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ((D7N == 1 || (D4N == 2 || D5N == 1)) &amp;&amp; (D5N == 1 || D6N == 1)) &#123;</span><br><span class="line">        mini5PatientConclusions.add(new Mini5PatientConclusion(String.valueOf(snow.next()), <span class="string">"D1"</span>, <span class="string">"躁狂发作 现患"</span>, patientRecordID));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (D7N == 1 &amp;&amp; D5N == 0 &amp; D6N == 0 &amp;&amp; (D4N == 2 || D4N == 1)) &#123;</span><br><span class="line">        mini5PatientConclusions.add(new Mini5PatientConclusion(String.valueOf(snow.next()), <span class="string">"D1"</span>, <span class="string">"轻躁狂发作 现患"</span>, patientRecordID));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(D4N==0 &amp;&amp; D5N==0)&#123;</span><br><span class="line">        mini5PatientConclusions.add(new Mini5PatientConclusion(String.valueOf(snow.next()), <span class="string">"D1"</span>, <span class="string">"轻躁狂发作 现患"</span>, patientRecordID));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7-集合初始化时，指定集合初始值大小。"><a href="#7-集合初始化时，指定集合初始值大小。" class="headerlink" title="7.  集合初始化时，指定集合初始值大小。"></a>7.  集合初始化时，指定集合初始值大小。</h3><p>HashMap和ArrayList一旦容量发生变化，就要带来额外的内存开销，和时间上的开销。<br>HashMap使用如下构造方法进行初始化，如果暂时无法确定集合大小，那么指定默认值（16）即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;(16);</span><br></pre></td></tr></table></figure></p>
+<p>在Java中，无论你的HashMap(x)中的x设置为多少，HashMap的大小都是2^n。2^n是大于x的第一个数。因为HashMap的初始化代码中有以下这行代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int capacity = 1;</span><br><span class="line"><span class="keyword">while</span> (capacity &lt; initialCapacity)</span><br><span class="line">capacity &lt;&lt;= 1;</span><br></pre></td></tr></table></figure></p>
+<h3 id="8-错误代码"><a href="#8-错误代码" class="headerlink" title="8.  错误代码"></a>8.  错误代码</h3><p>查询部门量表数据的SQL错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ScaleRecordMapper.xml</span><br><span class="line"></span><br><span class="line">&lt;select id=<span class="string">"CountDepartmentUseNum"</span> resultType=<span class="string">"java.util.Map"</span>&gt;</span><br><span class="line">    SELECT</span><br><span class="line">    sum(<span class="keyword">case</span> when a.Status =<span class="string">'1'</span> <span class="keyword">then</span> 1 <span class="keyword">else</span> 0 end) as totalnum,</span><br><span class="line">    sum(<span class="keyword">case</span> when YEAR(NOW()) = YEAR(CheckDate) AND a.Status =<span class="string">'1'</span> <span class="keyword">then</span> 1 <span class="keyword">else</span> 0 end) as yearusenum,</span><br><span class="line">    sum(<span class="keyword">case</span> when YEAR(NOW()) = YEAR(CheckDate) AND MONTH(NOW()) = MONTH(CheckDate) AND a.Status =<span class="string">'1'</span> <span class="keyword">then</span> 1 <span class="keyword">else</span> 0 end) as monthusenum,</span><br><span class="line">    sum(<span class="keyword">case</span> when YEAR(NOW()) = YEAR(CheckDate) AND WEEK(NOW()) = WEEK(CheckDate) AND a.Status =<span class="string">'1'</span> <span class="keyword">then</span> 1 <span class="keyword">else</span> 0 end) as weekusenum</span><br><span class="line">    from TScaleRecord a</span><br><span class="line">    LEFT JOIN TRole b ON (a.RecorderID = b.RoleID)</span><br><span class="line">    WHERE b.DepartmentID=<span class="comment">#&#123;departmentid&#125;</span></span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
+<p>获取问卷结论的空指针异常<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TPaperAnswerService.java</span><br><span class="line"></span><br><span class="line">String result = resultMapper.getResultByScore(score,paperID).replace(<span class="string">"score"</span>,String.valueOf(score));</span><br></pre></td></tr></table></figure></p>
+<h3 id="9-建议"><a href="#9-建议" class="headerlink" title="9.  建议"></a>9.  建议</h3><p>不允许任何魔法值（即未经定义的常量）直接出现在代码中。</p>
+<p>中括号是数组类型的一部分，数组定义如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] a = new String[3];</span><br></pre></td></tr></table></figure></p>
+<p>所有的覆写方法，必须加@Override注解。 反例：getObject()与get0bject()的问题。一个是字母的O，一个是数字的0，加@Override可以准确判断是否覆盖成功。另外，如果在抽象类中对方法签名进行修改，其实现类会马上编译报错。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/27/刺客信条起源/" rel="next" title="刺客信条起源">
+                <i class="fa fa-chevron-left"></i> 刺客信条起源
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/22/JAVA生成指定编码格式的TXT文档/" rel="prev" title="JAVA生成指定编码格式的TXT文档">
+                JAVA生成指定编码格式的TXT文档 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="负三">
+          <p class="site-author-name" itemprop="name">负三</p>
+           
+              <p class="site-description motion-element" itemprop="description">功不唐捐，玉汝于成</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/HTML-Margin-Top/blog" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/5218840111/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端"><span class="nav-number">1.</span> <span class="nav-text">前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标签的使用"><span class="nav-number">1.1.</span> <span class="nav-text">1.  标签的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-多个js文件引用"><span class="nav-number">1.2.</span> <span class="nav-text">2.  多个js文件引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-css-命名"><span class="nav-number">1.3.</span> <span class="nav-text">3.  css 命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-js中的信息提示，推荐使用const-定义"><span class="nav-number">1.4.</span> <span class="nav-text">4.  js中的信息提示，推荐使用const 定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-使用“-”替换“-”"><span class="nav-number">1.5.</span> <span class="nav-text">5.  使用“===”替换“==”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后端"><span class="nav-number">2.</span> <span class="nav-text">后端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-方法名、参数名、成员变量、局部变量命名"><span class="nav-number">2.1.</span> <span class="nav-text">1. 方法名、参数名、成员变量、局部变量命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-常量命名"><span class="nav-number">2.2.</span> <span class="nav-text">2. 常量命名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-包名"><span class="nav-number">2.3.</span> <span class="nav-text">3.  包名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-类名"><span class="nav-number">2.4.</span> <span class="nav-text">4.  类名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-equals方法的调用"><span class="nav-number">2.5.</span> <span class="nav-text">5.  equals方法的调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-不要在条件判断中执行复杂的语句"><span class="nav-number">2.6.</span> <span class="nav-text">6.  不要在条件判断中执行复杂的语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-集合初始化时，指定集合初始值大小。"><span class="nav-number">2.7.</span> <span class="nav-text">7.  集合初始化时，指定集合初始值大小。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-错误代码"><span class="nav-number">2.8.</span> <span class="nav-text">8.  错误代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-建议"><span class="nav-number">2.9.</span> <span class="nav-text">9.  建议</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">负三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

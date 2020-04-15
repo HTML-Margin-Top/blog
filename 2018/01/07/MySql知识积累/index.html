@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Microsoft Jhenghei:300,300italic,400,400italic,700,700italic|Microsoft Jhenghei:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="如果你认识以前的我，也许会原谅现在的我。—-张爱玲  myclass{margin-left:2em}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySql知识积累">
+<meta property="og:url" content="http://yoursite.com/2018/01/07/MySql知识积累/index.html">
+<meta property="og:site_name" content="负三">
+<meta property="og:description" content="如果你认识以前的我，也许会原谅现在的我。—-张爱玲  myclass{margin-left:2em}">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-15T06:17:45.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySql知识积累">
+<meta name="twitter:description" content="如果你认识以前的我，也许会原谅现在的我。—-张爱玲  myclass{margin-left:2em}">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/07/MySql知识积累/">
+
+
+
+
+
+  <title>MySql知识积累 | 负三</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">负三</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/07/MySql知识积累/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="负三">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="负三">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySql知识积累</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T23:22:55+00:00">
+                2018-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>如果你认识以前的我，也许会原谅现在的我。—-张爱玲</p>
+</blockquote>
+<style>myclass{margin-left:2em}</style>
+
+<a id="more"></a>
+<h2 id="TRIM-函数"><a href="#TRIM-函数" class="headerlink" title="TRIM()函数"></a>TRIM()函数</h2><p>用法：<br> TRIM([{BOTH | LEADING | TRAILING} [remstr] FROM] str)<br> TRIM([remstr FROM] str)<br> 返回字符串str，删除所有 remstr 前缀或后缀。如果没有符 BOTH, LEADING, 或TRAILING给出，假定则是BOTH(默认的)。<br> remstr为可任选的，如果未指定，空格被删除。</p>
+<p> 默认过滤空格，BOTH参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TRIM(<span class="string">"   hello,world   "</span>);</span><br><span class="line">hello,world</span><br></pre></td></tr></table></figure></p>
+<p>过滤前缀指定字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TRIM(LEADING &apos;x&apos; FROM &apos;xxxbarxxx&apos;)</span><br><span class="line">barxxx</span><br></pre></td></tr></table></figure></p>
+<p>过滤两端字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TRIM(BOTH &apos;x&apos; FROM &apos;xxxbarxxx&apos;)</span><br><span class="line">bar</span><br></pre></td></tr></table></figure></p>
+<p>过滤后缀指定字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TRIM(TRAILING &apos;xyz&apos; FROM &apos;barxxyz&apos;)</span><br><span class="line">barx</span><br></pre></td></tr></table></figure></p>
+<p>删除前缀空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LTRIM(&apos;  barbar&apos;)</span><br><span class="line">barbar</span><br></pre></td></tr></table></figure></p>
+<p>删除后缀空格<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RTRIM(&apos;barbar   &apos;)</span><br><span class="line">barbar</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="清空表数据"><a href="#清空表数据" class="headerlink" title="清空表数据"></a>清空表数据</h2><p>TRUNCATE TABLE TABLE_NAME;</p>
+<hr>
+<h2 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT"></a>COUNT</h2><ul>
+<li>COUNT(*):聚合统计所有列</li>
+</ul>
+<ul>
+<li>COUNT(1):聚合统计第一列</li>
+</ul>
+<ul>
+<li>COUNT([列名]):聚合统计指定列</li>
+</ul>
+<hr>
+<h2 id="HIVING"><a href="#HIVING" class="headerlink" title="HIVING"></a>HIVING</h2><p>跟在group by 和 order by 之后的 可以按结果筛查</p>
+<hr>
+<h2 id="时间相关"><a href="#时间相关" class="headerlink" title="时间相关"></a>时间相关</h2><ul>
+<li>CURRENT_TIMESTAMP   当前时间</li>
+<li>DATE()  取日期</li>
+<li>NOW() 取当前时间</li>
+<li>DATEDIFF(a，b)    时间相减</li>
+</ul>
+<hr>
+<h2 id="FIND-IN-SET-str-strlist"><a href="#FIND-IN-SET-str-strlist" class="headerlink" title="FIND_IN_SET(str,strlist)"></a>FIND_IN_SET(str,strlist)</h2><p>假如字符串str 在由N个子链组成的字符串列表strlist 中，则返回值为str在字符串列表中的位置（从1开始）。<br>此时可以理解为Java中List类的indexOf()方法。<br>一个字符串列表就是一个由一些被‘,’符号分开的自链组成的字符串。<br>如果第一个参数是一个常数字符串，而第二个是type SET列，则   FIND_IN_SET() 函数被优化，使用比特计算。<br>如果str不在strlist 或strlist 为空字符串，则返回值为 0 。如任意一个参数为NULL，则返回值为 NULL。<br>这个函数在第一个参数包含一个逗号(‘,’)时将无法正常运行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT FIND_IN_SET(<span class="string">'b'</span>,<span class="string">'a,b,c,d'</span>);</span><br><span class="line">2</span><br></pre></td></tr></table></figure></p>
+<p>FIND_IN_SET 是精确匹配，字段值以英文 ‘,’。<br>Like 是广泛的模糊查询，字段中无需使用分隔符。<br>两者基于使用场景自行选择即可。</p>
+<hr>
+<h2 id="NULL相关"><a href="#NULL相关" class="headerlink" title="NULL相关"></a>NULL相关</h2><ul>
+<li><p>IFNULL(expr1,expr2)<br>如果 expr1 不是 NULL，IFNULL() 返回 expr1，否则它返回 expr2。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; IFNULL(1,0)</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NULLIF(expr1,expr2)<br>如果expr1 = expr2 成立，那么返回值为NULL，否则返回值为expr1。这和CASE  WHEN expr1 = expr2 THEN NULL ELSE   expr1 END相同。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; IFNULL(1,0)</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ISNULL(expr)<br> 如expr 为null，那么isnull() 的返回值为 1，否则返回值为 0。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ISNULL(1+1)</span><br><span class="line">0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="取整函数"><a href="#取整函数" class="headerlink" title="取整函数"></a>取整函数</h2><ul>
+<li>TRUNC(value,precision)按精度(precision)截取某个数字,不进行舍入操作</li>
+<li>ROUND(value,precision)根据给定的精度(precision)输入数值<blockquote>
+<p> ROUND(a) 四舍五入到整数<br> ROUND(a，b)四舍五入到小数点后第b位</p>
+</blockquote>
+</li>
+<li>CEIL (value) 产生大于或等于指定值(value)的最小整数。向上取整</li>
+<li>FLOOR（value）与 ceil()相反，产生小于或等于指定值(value)的最小整数。向下取整</li>
+<li>SIGN(value) 与绝对值函数ABS()相反。ABS()给出的是值的量而不是其符号，SIGN(value)则给出值的符号而不是量。</li>
+</ul>
+<hr>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li><p>局部变量<br>  局部变量一般用在sql语句块中，比如存储过程的begin/end。其作用域仅限于该语句块，在该语句块执行完毕后，局部变量就消失了。<br>  局部变量一般用declare来声明，可以使用default来说明默认值。也可以用SET来进行初始化。<br>  例如在存储过程中定义局部变量：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">BEGIN</span><br><span class="line">  DECLARE sTmpID VARCHAR(4000) DEFAULT <span class="string">"$"</span>;</span><br><span class="line">  DECLARE sTmpChileID VARCHAR(4000);</span><br><span class="line"></span><br><span class="line">  SET sTmpChileID = cast(roleID as CHAR);</span><br><span class="line"></span><br><span class="line">  WHILE sTmpChileID IS NOT NULL DO</span><br><span class="line">    SET sTmpID = concat(sTmpID,<span class="string">','</span>,sTmpChileID);</span><br><span class="line">    SELECT group_concat(TRole.RoleID) INTO  sTmpChileID FROM TRole WHERE find_in_set(ParentID,sTmpChileID)&gt;0;</span><br><span class="line">  END WHILE;</span><br><span class="line">  RETURN sTmpID;</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+<p>  上述代码中sTmpID、sTmpChileID为局部变量</p>
+</li>
+<li><p>用户变量<br>用户变量：以”@”开始，形式为”@变量名”<br>用户变量的作用域要比局部变量要广。用户变量可以作用于当前整个连接，但是当当前连接断开后，其所定义的用户变量都会消失。<br>用户变量使用如下(这里我们无须使用declare关键字进行定义，可以直接这样使用):<br>select @变量名<br>对用户变量赋值有两种方式，一种是直接用”=”号，另一种是用”:=”号。<br>其区别在于使用set命令对用户变量进行赋值时，两种方式都可以使用；当使用select语句对用户变量进行赋值时，只能使用”:=”方式，<strong>因为在select语句中，”=”号被看作是比较操作符。</strong><br>示例程序如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">T.*,</span><br><span class="line">(@rowNO := @rowNo+1) AS displayNo</span><br><span class="line">FROM</span><br><span class="line">    (SELECT</span><br><span class="line">    IFNULL(TR.VisitCode, <span class="string">""</span>) AS recordID,</span><br><span class="line">    IFNULL(TR.VisitDate, <span class="string">""</span>) AS visitDate,</span><br><span class="line">    IFNULL(TD.JobCode, <span class="string">""</span>) AS jobCode,</span><br><span class="line">    IFNULL(TR.APN, <span class="string">""</span>) AS apn,</span><br><span class="line">    IFNULL(TD.DepartmentCode, <span class="string">""</span>) AS departmentCode,</span><br><span class="line">    IFNULL(TP.Name, <span class="string">""</span>) AS patientName,</span><br><span class="line">    IFNULL(TP.Mobile, <span class="string">""</span>) AS mobile,</span><br><span class="line">    IFNULL(TR.RefuseRemark, <span class="string">""</span>) AS refuseRemark,</span><br><span class="line">    IFNULL(TP.IDCardNo, <span class="string">""</span>) AS idCardNo,</span><br><span class="line">    IFNULL(TP.Sex, <span class="string">""</span>) AS patientSex,</span><br><span class="line">    IFNULL(TP.Birthday, <span class="string">""</span>) AS patientBirthday,</span><br><span class="line">    IFNULL(TR.DoctorConfirmTime, <span class="string">""</span>) AS doctorConfirmTime,</span><br><span class="line">    IFNULL(TD.DoctorID, <span class="string">""</span>) AS doctorID,</span><br><span class="line">    IFNULL(TR.ClinicCode, <span class="string">"0"</span>) AS  job</span><br><span class="line">    FROM	TRegistration TR</span><br><span class="line">    LEFT JOIN TDoctor TD ON TD.DoctorID = TR.DoctorID</span><br><span class="line">    LEFT JOIN TPatient TP ON TP.PatientID = TR.PatientID</span><br><span class="line">    WHERE TR.RegistrationStatus = <span class="string">'10'</span></span><br><span class="line">    ) T,(select @rowNO :=0) b</span><br><span class="line">WHERE T.VisitDate = <span class="comment">#&#123;visitDate&#125;</span></span><br><span class="line">ORDER BY T.DoctorConfirmTime</span><br></pre></td></tr></table></figure>
+<p>首先使用<code>(select @rowNO :=0) b</code>声明并初始化，<br>然后<code>(@rowNO := @rowNo+1) AS displayNo</code>使用其作为行号</p>
+</li>
+</ul>
+<hr>
+<h2 id="gt-与-gt-的执行效率"><a href="#gt-与-gt-的执行效率" class="headerlink" title="&gt; 与 &gt;=的执行效率"></a>&gt; 与 &gt;=的执行效率</h2><p><code>&gt;=</code>先通过索引快速定位到等于项，然后在向下扫描，选出大于项；<br>而<code>&gt;</code>不会通过索引直接定位，可能会走全盘扫描；</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/03/知识梳理/" rel="next" title="知识梳理">
+                <i class="fa fa-chevron-left"></i> 知识梳理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/08/MYBATIS使用心得/" rel="prev" title="MYBATIS使用心得">
+                MYBATIS使用心得 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="负三">
+          <p class="site-author-name" itemprop="name">负三</p>
+           
+              <p class="site-description motion-element" itemprop="description">功不唐捐，玉汝于成</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/HTML-Margin-Top/blog" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/5218840111/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TRIM-函数"><span class="nav-number">1.</span> <span class="nav-text">TRIM()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#清空表数据"><span class="nav-number">2.</span> <span class="nav-text">清空表数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">3.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HIVING"><span class="nav-number">4.</span> <span class="nav-text">HIVING</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间相关"><span class="nav-number">5.</span> <span class="nav-text">时间相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIND-IN-SET-str-strlist"><span class="nav-number">6.</span> <span class="nav-text">FIND_IN_SET(str,strlist)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL相关"><span class="nav-number">7.</span> <span class="nav-text">NULL相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取整函数"><span class="nav-number">8.</span> <span class="nav-text">取整函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">9.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gt-与-gt-的执行效率"><span class="nav-number">10.</span> <span class="nav-text">&gt; 与 &gt;=的执行效率</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">负三</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
