@@ -1,0 +1,82 @@
+Index: source/_posts/SpringBoot学习日志.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- source/_posts/SpringBoot学习日志.md	(date 1564023063795)
++++ source/_posts/SpringBoot学习日志.md	(date 1564023063795)
+@@ -0,0 +1,1 @@
++创建时间：2019年7月25日 10:51:02
+\ No newline at end of file
+Index: source/_posts/每日一记.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- source/_posts/每日一记.md	(revision 46b87905b4bf7618354c450e90c4a0abf28f8c82)
++++ source/_posts/每日一记.md	(date 1564135889150)
+@@ -213,6 +213,37 @@
+ 
+ 前端代码规范：http://alloyteam.github.io/CodeGuide/
+ 
++ajax实现文件上传
++# 点击button按钮触发input标签
++function select_file(){
++    $("#file").trigger("click");
++}
++
++function fileUpload(){
++    # 创建formdata对象
++    var formData = new FormData();
++    # 给formData对象添加<input>标签,注意与input标签的ID一致
++    formData.append('file', $('#file')[0].files[0]);
++    $.ajax({
++                url : '/xxx',//这里写你的url
++                type : 'POST',
++                data : formData,
++                contentType: false,// 当有文件要上传时，此项是必须的，否则后台无法识别文件流的起始位置
++                processData: false,// 是否序列化data属性，默认true(注意：false时type必须是post)
++                dataType: 'json',//这里是返回类型，一般是json,text等
++                clearForm: true,//提交后是否清空表单数据
++                success: function(data) {   //提交成功后自动执行的处理函数，参数data就是服务器返回的数据。
++                    aler('上传成功');
++                },
++                error: function(data, status, e) {  //提交失败自动执行的处理函数。
++                    console.error(e);
++                }
++            });
++}
++
++
++重点：上传数据格式为FormData，多字段就append多个字段
++
+ 
+ 
+ 
+Index: source/_posts/MYBATIS使用心得.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- source/_posts/MYBATIS使用心得.md	(revision 46b87905b4bf7618354c450e90c4a0abf28f8c82)
++++ source/_posts/MYBATIS使用心得.md	(date 1564044734890)
+@@ -7,7 +7,7 @@
+ <!-- more -->
+ 
+ ## mybatis 运算符
+-`&lt;`	<	小于号
++` &lt;`	<	小于号
+ `&gt;`	>	大于号
+ `&amp;`	&	与
+ `&apos;`	'	单引号
+Index: source/_posts/Calendar日历学习日志.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- source/_posts/Calendar日历学习日志.md	(date 1564024517032)
++++ source/_posts/Calendar日历学习日志.md	(date 1564024517032)
+@@ -0,0 +1,2 @@
++2019年7月25日 11:13:58
++getTimeZone():获取时区，后面业务可能会用到
+\ No newline at end of file

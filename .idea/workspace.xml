@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5abec9f5-81c6-4eca-bb44-61d1d992fbe6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="5abec9f5-81c6-4eca-bb44-61d1d992fbe6" name="Default" comment="每日学习">
+      <change afterPath="$PROJECT_DIR$/2019年7月26日_18_11_53_ajax多字段上传文件.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unnamed.patch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/每日一记.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/每日一记.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +18,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/白云区测试.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/每日一记.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="336">
-                <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="24">
+                <caret line="269" column="19" selection-start-line="269" selection-start-column="19" selection-end-line="269" selection-end-column="19" />
               </first_editor>
               <second_editor />
             </state>
@@ -30,22 +30,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/每日一记.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="919">
-                <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/_posts/Calendar日历学习日志.md">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="24">
-              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+              <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -55,7 +48,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor>
-                <caret column="23" selection-start-column="23" selection-end-column="23" />
+                <caret column="24" selection-start-column="24" selection-end-column="24" />
               </first_editor>
               <second_editor />
             </state>
@@ -200,12 +193,14 @@
         <option value="$PROJECT_DIR$/source/_posts/SpringBoot学习日志.md" />
         <option value="$PROJECT_DIR$/source/_posts/Calendar日历学习日志.md" />
         <option value="$PROJECT_DIR$/source/_posts/MYBATIS使用心得.md" />
+        <option value="$PROJECT_DIR$/source/_posts/guanhai.html" />
+        <option value="$PROJECT_DIR$/source/_posts/home.html" />
         <option value="$PROJECT_DIR$/source/_posts/每日一记.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1273" />
+    <option name="x" value="525" />
     <option name="width" value="1294" />
     <option name="height" value="1407" />
   </component>
@@ -215,7 +210,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -223,20 +228,20 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/WebStormProject/blog/source/_posts/hello-world.md" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BaiYunChild/newparent" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../悦子阁" />
     <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../node.js/node" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\WebStormProject\blog\themes\next\source\lib\font-awesome\fonts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WebStormProject\blog\source\_posts" />
       <recent name="D:\WebStormProject\blog\source\img" />
       <recent name="D:\WebStormProject\blog\themes\next\source\lib\font-awesome" />
       <recent name="D:\WebStormProject\blog\themes\next\source\images" />
-      <recent name="D:\WebStormProject\blog\source\_posts" />
       <recent name="D:\WebStormProject\blog\themes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebStormProject\blog\themes\next\source\lib\font-awesome\fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -250,6 +255,20 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.home.html">
+    <configuration name="guanhai.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/blog/source/_posts/guanhai.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="home.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/blog/source/_posts/home.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.home.html" />
+        <item itemvalue="JavaScript Debug.guanhai.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -379,7 +398,46 @@
       <workItem from="1568768812921" duration="1195000" />
       <workItem from="1568854672518" duration="2719000" />
       <workItem from="1568941645382" duration="3587000" />
-      <workItem from="1569200539915" duration="3349000" />
+      <workItem from="1569200539915" duration="3569000" />
+      <workItem from="1569312780871" duration="609000" />
+      <workItem from="1569373413095" duration="597000" />
+      <workItem from="1569561298499" duration="624000" />
+      <workItem from="1569719104891" duration="592000" />
+      <workItem from="1570512002350" duration="593000" />
+      <workItem from="1570758419599" duration="1795000" />
+      <workItem from="1571019904163" duration="3123000" />
+      <workItem from="1571203716146" duration="597000" />
+      <workItem from="1571381255444" duration="598000" />
+      <workItem from="1571620775124" duration="2397000" />
+      <workItem from="1571792573698" duration="1197000" />
+      <workItem from="1572224612368" duration="2811000" />
+      <workItem from="1572318477088" duration="1905000" />
+      <workItem from="1572343676779" duration="42000" />
+      <workItem from="1572397021896" duration="2506000" />
+      <workItem from="1572404496939" duration="976000" />
+      <workItem from="1573548283205" duration="750000" />
+      <workItem from="1576572322257" duration="693000" />
+      <workItem from="1576825590974" duration="541000" />
+      <workItem from="1577067639853" duration="2719000" />
+      <workItem from="1577323657428" duration="563000" />
+      <workItem from="1577755201076" duration="497000" />
+      <workItem from="1578275510255" duration="6506000" />
+      <workItem from="1578363950382" duration="1256000" />
+      <workItem from="1582884019797" duration="239000" />
+      <workItem from="1583139636107" duration="2422000" />
+      <workItem from="1583197479067" duration="4521000" />
+      <workItem from="1583738815169" duration="5152000" />
+      <workItem from="1583802423495" duration="4377000" />
+      <workItem from="1583892692248" duration="1254000" />
+      <workItem from="1584947813848" duration="1043000" />
+      <workItem from="1585012295644" duration="3574000" />
+      <workItem from="1585098307508" duration="2983000" />
+      <workItem from="1585184972936" duration="5252000" />
+      <workItem from="1586512463853" duration="780000" />
+      <workItem from="1586741652553" duration="2569000" />
+      <workItem from="1586771297882" duration="1450000" />
+      <workItem from="1586831020897" duration="595000" />
+      <workItem from="1586921399459" duration="1326000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1511238259349</created>
@@ -633,17 +691,45 @@
       <option name="project" value="LOCAL" />
       <updated>1566209499774</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="每日学习">
+      <created>1569234101849</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1569234101849</updated>
+    </task>
+    <task id="LOCAL-00038" summary="每日学习">
+      <created>1572343702036</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1572343702036</updated>
+    </task>
+    <task id="LOCAL-00039" summary="每日学习">
+      <created>1584947898490</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1584947898490</updated>
+    </task>
+    <task id="LOCAL-00040" summary="每日学习">
+      <created>1586512838329</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1586512838329</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307020000" />
+    <option name="totallyTimeSpent" value="379264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15130024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20685579" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -654,7 +740,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49842396" weight="0.3291634" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4968479" weight="0.21667966" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4968479" visible="true" weight="0.21684867" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5031521" side_tool="true" weight="0.32838154" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -722,7 +808,8 @@
     <MESSAGE value="2019年7月26日 18:11:53&#10;ajax多字段上传文件" />
     <MESSAGE value="每日一记2019年8月17日 18:27:04" />
     <MESSAGE value="2019年8月19日 18:11:31 每日一记" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019年8月19日 18:11:31 每日一记" />
+    <MESSAGE value="每日学习" />
+    <option name="LAST_COMMIT_MESSAGE" value="每日学习" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/themes/next/test/.jshintrc">
@@ -839,16 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/代码走查.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/知识梳理.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/JAVA生成指定编码格式的TXT文档.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -938,11 +1015,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/知识梳理.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/guanhai.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="888">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/代码走查.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1368">
+          <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2019年7月26日_18_11_53_ajax多字段上传文件.patch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/SpringBoot学习日志.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor>
-            <caret column="23" selection-start-column="23" selection-end-column="23" />
+            <caret column="24" selection-start-column="24" selection-end-column="24" />
           </first_editor>
           <second_editor />
         </state>
@@ -1034,15 +1161,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/每日一记.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="919">
-            <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
+          <first_editor relative-caret-position="24">
+            <caret line="269" column="19" selection-start-line="269" selection-start-column="19" selection-end-line="269" selection-end-column="19" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
